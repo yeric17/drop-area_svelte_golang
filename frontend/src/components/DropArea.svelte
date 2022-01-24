@@ -41,12 +41,26 @@
 
 
 
-<form class="drop-area_form" enctype="multipart/form-data" on:submit|preventDefault={handleSubmit}  method="POST" on:click={(event)=>{
+<form 
+    class="drop-area_form"
+    enctype="multipart/form-data"
+    on:submit|preventDefault={handleSubmit}
+    method="POST" 
+    on:click={(event)=>{
         event.stopPropagation();
         
     }}>
-    <input id="{id}" class="drop-area_input" type="file" name="file" on:change|preventDefault={handleChange}/>
-    <label for="{id}" class:hover={'hover'} class="drop-area" on:dragenter|preventDefault={()=>hover=true} on:dragover|preventDefault={()=>hover=true} on:dragleave|preventDefault={()=>hover=false} on:drop|preventDefault={handleDrop}>
+    <input 
+        id="{id}" 
+        class="drop-area_input" 
+        type="file" name="file" 
+        on:change|preventDefault={handleChange}/>
+    <label 
+        for="{id}" class:hover={'hover'} 
+        class="drop-area" on:dragenter|preventDefault={()=>hover=true} 
+        on:dragover|preventDefault={()=>hover=true} 
+        on:dragleave|preventDefault={()=>hover=false} 
+        on:drop|preventDefault={handleDrop}>
         <div class="drop-area_info">
             <slot>
                 <span>Arrastre y suelte archivos aquí, o de clic</span>
